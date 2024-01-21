@@ -1,0 +1,54 @@
+<%- include("../layout/header.ejs") -%>
+
+    <!-- <form action="/edit/<%= user._id %>" method="post">
+        <input type="text" name="name" value="<%= user.name %>" placeholder="Enter name" required>
+        <br>
+        <input type="email" name="email" value="<%=user.email%>" placeholder="Enter Email" required>
+        <br>
+        <input type="text" name="mobile" value="<%=user.mobile%>" placeholder="Enter Mobile number" required>
+        <br>
+        <input type="submit" value="update profile">
+    </form> -->
+
+
+
+
+
+
+    <section class="vh-100" style="background-color: #508bfc;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+
+                            <h3 class="mb-5">User Registration Form</h3>
+                            
+
+                            <form action="/edit/<%= user._id %>" method="post">
+                                <div class="form-outline mb-4">
+                                    <input type="text" name="name" value="<%= user.name %>" placeholder="Enter name"
+                                        required>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <input type="email" name="email" value="<%=user.email%>" placeholder="Enter Email"
+                                        required>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <input type="text" name="mobile" value="<%=user.mobile%>"
+                                        placeholder="Enter Mobile number" required>
+                                </div>
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Update profile</button>
+                                <hr>
+                                <h5> For User Login<a href="/login">login</a></h5>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <%- include("../layout/footer.ejs") -%>

@@ -1,0 +1,103 @@
+<%- include('../layout/header.ejs') -%>
+
+
+
+<!-- 
+    <form action=""  method="post">
+        <input type="text"  name="Name"  placeholder="Enter the name"  required>
+        <br><br>
+        <input type="email"  name="Email"  placeholder="Enter the email"  required>
+        <br><br>
+        <input type="text"  name="Mobile_Number"  placeholder="Enter mobile number"  required>
+        <br><br>
+        <input type="text"  name="Password"  placeholder="Enter the Password"  required>
+        <br><br>
+        <input type="submit"  value="Register">
+        <br><br>
+    </form> -->
+
+
+
+    <section class="h-100" style="background-color: #508bfc;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+      
+                  <h3 class="mb-5">User Registration Form</h3>
+                  
+                  <% if (messages.exist) { %>
+                    <div class="alert alert-danger d-flex align-items-center" role="alert" id="existAlert">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2 " viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>
+                        <div >
+                            <strong>Hey !</strong>
+                          <%= messages.exist %>
+                          
+                        </div>
+                      </div>
+                      
+                    
+                <% } %>
+
+                <% if (messages.usernameexist) { %>
+                  <div class="alert alert-danger d-flex align-items-center" role="alert" id="usernameExistAlert">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2 " viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                      </svg>
+                      <div >
+                          <strong>Hey !</strong>
+                        <%= messages.usernameexist %>
+                        
+                      </div>
+                    </div>
+                    
+                  
+              <% } %>
+    
+                  <form action=""  method="post">
+                  <div class="form-outline mb-4">
+                    <input type="text"  name="Name"  placeholder="Enter the name"  required>
+                   
+                  </div>
+                  <div class="form-outline mb-4">   
+                    <input type="email" name="Email" placeholder="Enter email" required  >
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text"  name="Mobile"  placeholder="Enter mobile number"  required>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password"  name="Password" placeholder="Enter password" required >
+                  </div>
+                  <button class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
+                   <hr>
+                  <h5 >Already have an account <a href="/login">login</a></h5>               
+                  <% if(typeof message !=='undefined'){ %>
+
+                    <p style="color: green;">
+                        <%= message %>
+                    </p>
+            
+                    <% } %>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+
+
+    <!-- <% if(typeof message !=='undefined'){ %>
+
+        <p style="color: green;">
+            <%= message %>
+        </p>
+
+        <% } %> -->
+            <%-include('../layout/footer.ejs') -%>

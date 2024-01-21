@@ -1,0 +1,147 @@
+<%- include('../layout/header.ejs') -%>
+
+
+    <!-- <h1>admin dashboard</h1> -->
+
+    <!-- <a href="/admin/home">Go To Home</a>
+    <br><br> -->
+
+    <!-- <a href="/admin/new-user">Add New User</a>
+    <br><br>
+    <a href="/admin">Logout</a> -->
+
+<!-- 
+    <table style="width: 50%; text-align: center;">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile No</th>
+            <th>Action</th>
+
+        </tr>
+
+        <% if(users.length>0){
+
+            for(i=0; i<users.length; i++){ %>
+
+                <tr>
+                    <td>
+                        <%=users[i].name%>
+                    </td>
+                    <td>
+                        <%=users[i].email%>
+                    </td>
+                    <td>
+                        <%=users[i].mobile%>
+                    </td>
+                    <td><a href="/admin/edit-user?id=<%= users[i]._id %>">Edit</a></td>
+                    <td><a href="/admin/delete-user?id=<%= users[i]._id %>">Delete</a></td>
+                   
+
+                </tr>
+
+                <% }}else{ %>
+                    <tr>
+                        <td colspan="4">User Not Found..</td>
+                    </tr>
+
+                    <% } %>
+                      
+
+    </table> -->
+
+    <section class="h-100" style="background-color: #50fce5;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <!-- <div class="card shadow-2-strong" style="border-radius: 1rem;"> -->
+                <div class="card-body p-5 text-center">
+                    <h1 class="pb-2">Admin dashboard</h1>
+                    
+                    <div class="d-flex align-items-center justify-content-center my-3">
+                        <input type="text" id="searchInput" class="form-control" placeholder="Search by Name" style="width: 300px;">
+                      </div>
+      
+    <table id="userTable" style="width: 100%; text-align: center;" class="table table-bordered ">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile No</th>
+            <th colspan="2">Action </th>
+            
+
+        </tr>
+
+        <% if(Array.isArray(users) && users.length>0){%>   
+                <% users.map(function (n,index){ %>
+
+                <tr>
+                    <td>
+                        
+                        <%=index+1%>
+                    </td>
+                    <td>
+                       
+                        <%=n.name%>
+                    </td>
+                    <td>
+                       
+                        <%=n.email%>
+                    </td>
+                    <td>
+                       
+                        <%=n.mobile%>
+                    </td>
+
+                    <td><a href="/admin/edit-user?id=<%= n._id %>"><i class="fa-solid fa-pen-to-square" ></i></a></td>
+                    <td><a href="/admin/delete-user?id=<%= n._id %>"><i class="fa-solid fa-trash" style="color:red;"></i></a></td>
+             
+                   
+                    <!-- <td><a href="/admin/edit-user?id=<%= n._id %>">Edit</a></td>
+                    <td><a href="/admin/delete-user?id=<%= n._id %>">Delete</a></td> -->
+                </tr>
+            
+
+                <% }) }else{ %>
+                    <tr>
+                        <td colspan="6">User Not Found..</td>
+                    </tr>
+
+                    <% } %>
+                      
+
+    </table>
+    <div class="">
+    <a href="/admin/new-user"><button class="btn btn-primary btn-lg btn-block" type="submit">Add user</button></a>
+    <a href="/admin/logout"><button class="btn btn-primary btn-lg btn-block" type="submit">logout</button></a>
+</div>
+                </div>
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <%- include('../layout/footer.ejs') -%>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          let searchInput=document.getElementById('searchInput');
+      
+          searchInput.addEventListener('keyup', function () {
+            let searchTerm=searchInput.value.toLowerCase();
+            let tableRows=document.querySelectorAll('#userTable tbody tr');
+      
+            tableRows.forEach(function (row) {
+                let nameColumn=row.querySelector('td:nth-child(2) '); // Adjust the index based on your table structure
+      
+              if (nameColumn) {
+                let nameText=nameColumn.textContent.toLowerCase();
+                row.style.display=nameText.includes(searchTerm) ? '' : 'none';
+              }
+            });
+          });
+        });
+      </script>

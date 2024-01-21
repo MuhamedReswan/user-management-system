@@ -1,0 +1,94 @@
+<%- include("../layout/header.ejs") -%>
+
+    <!-- <h1>Welcome <%=user.name%> -->
+    <!-- </h1>
+
+
+    <table>
+        <tr>
+            <td>Name :</td>
+            <td>
+                <%=user.name%>
+            </td>
+        </tr>
+        <tr>
+            <td>Email :</td>
+            <td>
+                <%=user.email%>
+            </td>
+        </tr>
+        <tr>
+            <td>Mobile Number :</td>
+            <td>
+                <%=user.mobile%>
+            </td>
+        </tr>
+        <tr>
+            <td>Password :</td>
+            <td>
+                <%=user.password%>
+            </td>
+        </tr>
+      
+    </table>
+    <a href="/edit?id=<%= user._id %>">edit</a>
+    <br>
+    <a href="/logout">logout</a> -->
+
+
+
+
+
+    
+ <section class="vh-100" style="background-color: #508bfc;">
+    <div class="container py-5  ">
+      <div class="row d-flex justify-content-center align-items-center ">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center mx-auto">
+                <h1 class="text-danger">Welcome <%=user.name%>
+                    <h3 class="mb-3"> Its Your Details</h3>
+
+              <table class="table table-primary" >
+                <tr>
+                   <h4> <td>Name :</td>
+                    <td>
+                        <%=user.name%>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email :</td>
+                    <td>
+                        <%=user.email%>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mobile Number: </td>
+                    <td>
+                        <%=user.mobile%>
+                    </td>
+                </tr>
+            </h4>
+              
+            </table>
+      
+            <div class="pt-3">
+           <a href="/logout"><button class="bg-warning rounded-2">logout</button></a> 
+           <a  href="/edit?id=<%= user._id %>" ><button class="bg-warning rounded-2">edit</button></a>
+           <!-- <a href="/logout" class="btn btn-warning rounded-2 border-2 border-dark ">logout</a> 
+                <a  href="/edit?id=<%= user._id %>" class="btn btn-warning rounded-2 border-2 border-dark ">edit</a> -->
+            </div>
+
+
+            
+           
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <%- include("../layout/footer.ejs") -%>
+
+
+    
